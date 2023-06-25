@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Design Resopnsivo com HTML5 & CSS3</title>
+    <link rel="stylesheet" href="../style/css/estilos.css">
+    <script src="../js/index.js" lang="javascript"></script>
+</head>
+
+<body>
+
+    <main class="main-container" role="main">
+        <div class="center-context" id="form-home">
+            <div class="center-context center-context-margin-n">
+                <img src="../img/logo-short-finanstart.png" />
+            </div>
+            <div class="center-context">
+                <h1 class="h1-format-text-1">Hora de começar a
+                    organizar suas finanças!</>
+
+                <h3 class="h3-format-text-1">Entre com sua conta ou crie uma nova
+                    para acessar o conteúdo</p>
+            </div>
+            <div class="center-context">
+                <img src="../img/btn-acessar-conta.png" id="btn-acessar-conta" onclick='javascript:login(this)' class="btn-formatted"/>
+                <img src="../img/btn-cadastrar.png" id="btn-cadastrar" onclick='javascript:login(this)' class="btn-formatted"/>
+                <img src="../img/btn-continuar-google.png" class="btn-formatted"/>
+                <img src="../img/btn-continuar-facebook.png" class="btn-formatted"/>
+            </div>
+        </div>
+
+        <div class="center-context" id="form-login">
+            <div class="left-context">
+                <img src="../img/btn-voltar.png" onclick="javascript:theForm('form-login','none','form-home','block');"/>
+            </div>
+            <div class="right-context">
+                <img src="../img/img-logo-small-finanstart.png"/>
+            </div>
+
+            <h1 class="h1-format-text-1">Entre com seu e-mail e senha
+                para acessar sua conta</h1>
+            
+            <div class="center-context">    
+                <div class="form-50">    
+                    <form>
+                        <div class="item">
+                            <div class="label-col">E-mail:
+                                    <input type="text" class="field name" id="email" required>
+                            </div>
+                        </div>
+                        <div class="break"></div> <!-- break -->
+                        <div class="item">
+                            <div class="label-col">Senha:
+                                <input type="email" class="field email" id="senha" required>
+                            </div>
+                        </div>
+
+                        <div class="left-context">
+                            <img src="../img/esqueci-minha-senha.png" class="btn-es-formatted"/>
+                        </div>
+
+                        <div class="center-context">
+                            <img src="../img/btn-entrar.png" class="btn-formatted" onclick="javascript:theForm('form-login','none','form-saldo-atual','block');"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+       </div>
+
+        <div class="center-context" id="form-cadastro">
+            <div class="left-context">
+                <img src="../img/btn-voltar.png" onclick="javascript:theForm('form-cadastro','none','form-home','block');"/>
+            </div>
+            <div class="right-context">
+                <img src="../img/img-logo-small-finanstart.png"/>
+            </div>
+
+            <h1 class="h1-format-text-1">
+                Cadastre-se agora mesmo no
+            Finanstart
+            </h1>
+            <div class="center-context">    
+                <div class="form-50">    
+                    <form>
+ 
+                        <div class="item">
+                            <div class="label-col">Nome completo:
+                                    <input type="text" class="field name" id="nome" required>
+                            </div>
+                        </div>
+                        <div class="break"></div> <!-- break -->
+                        <div class="item">
+                            <div class="label-col">E-mail:
+                                <input type="email" class="field email" id="email" required>
+                            </div>
+                        </div>
+                    
+                        <div class="item">
+                            <div class="label-col">Senha:
+                                <input type="email" class="field senha" id="senha" required>
+                            </div>
+                        </div>
+
+                        <div class="center-context">
+                            <img src="../img/btn-cadastrar.png" class="btn-formatted" onclick="javascript:theForm('form-cadastro','none','form-saldo-atual','block');"/>
+                        </div>
+                    </form>
+                </div>
+            </div>            
+        </div>
+
+        <div class="center-context" id="form-saldo-atual">
+            <div class="item">
+                <div class="items-in-4">
+                    <img src="../img/btn-voltar.png" onclick="javascript:theForm('form-saldo-atual','none','form-home','block');"/>
+                </div>                     
+                <div class="items-in-4">
+                    <img src="../img/btn-buscar.png" />
+                </div>
+                <div class="items-in-4">
+                    <img src="../img/btn-ajuda.png" />
+                </div>
+                <div class="items-in-4">
+                    <label class="label-col three-em">Mês</label>
+                </div>    
+                <div class="items-in-4">
+                    <img src="../img/btn-perfil-usuario.png" />    
+                </div>                
+            </div>        
+            
+            <div class="item">
+                <h1 class="h1-format-text-1">Saldo Atual</h1>
+                <h2 class="h2-format-text-1">R$ 0,00</h3>
+            </div>
+            
+            <div class="item item-margin-top">
+                <div class="left-context">
+                    <div class="left-context">
+                        <img src="../img/img-receita.png" onclick="javascript:theForm('form-saldo-atual','none','form-receitas','block');"/>   
+                    </div>
+                    <div class="left-context two-rem ">
+                        <label class="label-col">Receita</label>
+                    </div>
+                    <div class="left-context two-rem">
+                        <label class="label-col two-rem-green">RS 0,00</label>
+                    </div>
+                </div>
+
+                <div class="right-context">
+                    <div class="left-context left-context-align-center">
+                        <img src="../img/img-despesa.png" onclick="javascript:theForm('form-saldo-atual','none','form-despesas','block');" />   
+                    </div>
+                    <div class="right-context-2e two-rem">
+                        <label class="label-col">Despesa</label>
+                    </div>
+                    <div class="right-context-2e two-rem">
+                        <label class="label-col two-rem-red">RS 0,00</label>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="item item-margin-top">
+                <div class="right-context right-context-100">
+                    <div class="left-context left-context-25">
+                        <img src="../img/img-contas-total.png" style="margin-top: 35px;" />  
+                    </div>
+                    <div class="left-context two-rem">
+                        <label class="label-col">Contas</label>
+                    </div>
+                    <div class="left-context two-rem">
+                        <label class="label-col">Total</label>
+                    </div>
+                    <div class="left-context two-rem left-context-75">
+                        <div class="left-context-30">
+                            <label class="label-col">Saldo Atual</label>
+                            <label class="label-col">Saldo Previsto</label>
+                            
+                        </div>
+                        <div class="right-context-30">
+                            <label class="label-col-green">R$ 0,00</label>    
+                            <label class="label-col-green">R$ 0,00</label>    
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="item item-margin-top">
+                <div class="right-context right-context-100">
+                    <div class="left-context left-context-25">
+                        <img src="../img/img-cartao-credito.png" />  
+                    </div>
+                    <div class="left-context two-rem">
+                        <label class="label-col">Cartão de Crédito</label>
+                    </div>
+                    <div class="left-context two-rem left-context-75">
+                        <div class="left-context">
+                            <label class="label-col-red">Total de Despesas</label>
+                            <label class="label-col-red">Lançamentos</label>
+                            
+                        </div>
+                        <div class="right-context-25">
+                            <label class="label-col">R$ 0,00</label>    
+                            <label class="label-col">R$ 0,00</label>    
+                        </div>
+                    </div>
+                    <div class="center-context item-border-20">
+                        <img src="../img/btn-adicionar-cartao.png" class="btn-ac-formatted"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+        <div class="center-context" id="form-receitas">
+            <div class="item">
+                <div class="items-in-4">
+                    <img src="../img/btn-voltar.png" onclick="javascript:theForm('form-receitas','none','form-saldo-atual','block');"/>
+                </div>                     
+                <div class="items-in-4">
+                    <img src="../img/btn-buscar.png" />
+                </div>
+                <div class="items-in-4">
+                    <img src="../img/btn-ajuda.png" />
+                </div>
+                <div class="items-in-4">
+                    <label class="label-col three-em">Mês</label>
+                </div>    
+                <div class="items-in-4">
+                    <img src="../img/btn-perfil-usuario.png" />    
+                </div>                
+            </div>      
+            
+            <div class="item item-green-margin-top">
+                <h1 class="h1-format-text-1">Receitas</h1>
+                <h2 class="h2-format-text-1">Mês</h1>
+                <img src="../img/btn-adicionar-receitas.png" />
+            </div>
+
+            <div class="item">
+                <div class="center-context item-green">
+                    <div class="left-context-25 left-context-25-e">
+                        <img src="../img/img-total-pendente.png" />
+                    </div>
+                    <div class="left-context-25 left-context-25-e">
+                        <div class="right-context-100-ne">
+                            <h3 class="h3-format-text-1">Total Pendente</h3>
+                            <h1 class="h1-format-text-1">R$ 0,00</h3>
+                        </div>
+                    </div>
+                    <div class="left-context-green-1-e"></div>
+                    <div class="left-context-24 left-context-25-e">
+                        <img src="../img/img-total-recebido.png" />
+                    </div>
+                    <div class="left-context-24 left-context-25-e">
+                        <div class="right-context-100-ne">
+                            <h3 class="h3-format-text-1">Total Recebido</h3>
+                            <h1 class="h1-format-text-1">R$ 0,00</h3>
+                        </div>                     
+                    </div>
+
+                </div>
+             
+            </div>
+            
+            <div class="item">
+                <div class="left-context-25 left-context-25-e">
+                    <h3 class="h3-format-text-1">Data Transação</h3>
+                </div>
+                <div class="left-context-50 left-context-25-e">
+                    <h1 class="h1-format-text-1">R$ 0,00</h3>
+                </div>
+                <div class="right-context-25 img-right-context-25-ne">
+                    <img src="../img/btn-excluir-transacao.png">
+                </div>                
+            </div>
+            <div class="item item-green">
+                <div class="left-context-25 left-context-25-e">
+                    <h3 class="h3-format-text-1">Data Transação</h3>
+                </div>
+                <div class="left-context-50 left-context-25-e">
+                    <h1 class="h1-format-text-1">R$ 0,00</h3>
+                </div>
+                <div class="right-context-25 img-right-context-25-ne">
+                    <img src="../img/btn-excluir-transacao-green.png">
+                </div>                
+            </div>
+            <div class="item">
+                <div class="left-context-25 left-context-25-e">
+                    <h3 class="h3-format-text-1">Data Transação</h3>
+                </div>
+                <div class="left-context-50 left-context-25-e">
+                    <h1 class="h1-format-text-1">R$ 0,00</h3>
+                </div>
+                <div class="right-context-25 img-right-context-25-ne">
+                    <img src="../img/btn-excluir-transacao.png">
+                </div>                
+            </div>
+            <div class="item item-green">
+                <div class="left-context-25 left-context-25-e">
+                    <h3 class="h3-format-text-1">Data Transação</h3>
+                </div>
+                <div class="left-context-50 left-context-25-e">
+                    <h1 class="h1-format-text-1">R$ 0,00</h3>
+                </div>
+                <div class="right-context-25 img-right-context-25-ne">
+                    <img src="../img/btn-excluir-transacao-green.png">
+                </div>                
+            </div>
+            <div class="item">
+                <div class="left-context-25 left-context-25-e">
+                    <h3 class="h3-format-text-1">Data Transação</h3>
+                </div>
+                <div class="left-context-50 left-context-25-e">
+                    <h1 class="h1-format-text-1">R$ 0,00</h3>
+                </div>
+                <div class="right-context-25 img-right-context-25-ne">
+                    <img src="../img/btn-excluir-transacao.png">
+                </div>                
+            </div>
+
+            <div class="item item-green">
+                <div class="left-context-25 left-context-25-e">
+                    <h3 class="h3-format-text-1">Data Transação</h3>
+                </div>
+                <div class="left-context-50 left-context-25-e">
+                    <h1 class="h1-format-text-1">R$ 0,00</h3>
+                </div>
+                <div class="right-context-25 img-right-context-25-ne">
+                    <img src="../img/btn-excluir-transacao-green.png">
+                </div>                
+            </div>
+    
+        </div>
+
+        <div class="center-context" id="form-despesas">
+            <div class="item">
+                <div class="items-in-4">
+                    <img src="../img/btn-voltar.png" onclick="javascript:theForm('form-despesas','none','form-saldo-atual','block');"/>
+                </div>                     
+                <div class="items-in-4">
+                    <img src="../img/btn-buscar.png" />
+                </div>
+                <div class="items-in-4">
+                    <img src="../img/btn-ajuda.png" />
+                </div>
+                <div class="items-in-4">
+                    <label class="label-col three-em">Mês</label>
+                </div>    
+                <div class="items-in-4">
+                    <img src="../img/btn-perfil-usuario.png" />    
+                </div>                
+            </div>      
+            
+            <div class="item item-dred-margin-top">
+                <h1 class="h1-format-text-1">Despesas</h1>
+                <h2 class="h2-format-text-1">Mês</h1>
+                <img src="../img/btn-adicionar-despesas.png" />
+            </div>
+            <div class="item">
+                <div class="center-context">
+                    <div class="left-context-25 left-context-25-e">
+                        <img src="../img/img-total-pendente.png" />
+                    </div>
+                    <div class="left-context-25 left-context-25-e">
+                        <div class="right-context-100-ne">
+                            <h3 class="h3-format-text-1">Total Pendente</h3>
+                            <h1 class="h1-format-text-1">R$ 0,00</h3>
+                        </div>
+                    </div>
+                    <div class="left-context-dred-1-e"></div>
+                    <div class="left-context-24 left-context-25-e">
+                        <img src="../img/img-total-recebido.png" />
+                    </div>
+                    <div class="left-context-24 left-context-25-e">
+                        <div class="right-context-100-ne">
+                            <h3 class="h3-format-text-1">Total Recebido</h3>
+                            <h1 class="h1-format-text-1">R$ 0,00</h3>
+                        </div>                     
+                    </div>
+
+                </div>
+             
+            </div>
+            
+            <div class="item">
+                <div class="left-context-25 left-context-25-e">
+                    <h3 class="h3-format-text-1">Data Transação</h3>
+                </div>
+                <div class="left-context-50 left-context-25-e">
+                    <h1 class="h1-format-text-1">R$ 0,00</h3>
+                </div>
+                <div class="right-context-25 img-right-context-25-ne">
+                    <img src="../img/btn-excluir-transacao.png">
+                </div>                
+            </div>
+            <div class="item item-cyan">
+                <div class="left-context-25 left-context-25-e">
+                    <h3 class="h3-format-text-1">Data Transação</h3>
+                </div>
+                <div class="left-context-50 left-context-25-e">
+                    <h1 class="h1-format-text-1">R$ 0,00</h3>
+                </div>
+                <div class="right-context-25 img-right-context-25-ne">
+                    <img src="../img/btn-excluir-transacao-cinza.png">
+                </div>                
+            </div>
+            <div class="item">
+                <div class="left-context-25 left-context-25-e">
+                    <h3 class="h3-format-text-1">Data Transação</h3>
+                </div>
+                <div class="left-context-50 left-context-25-e">
+                    <h1 class="h1-format-text-1">R$ 0,00</h3>
+                </div>
+                <div class="right-context-25 img-right-context-25-ne">
+                    <img src="../img/btn-excluir-transacao.png">
+                </div>                
+            </div>
+            <div class="item item-cyan">
+                <div class="left-context-25 left-context-25-e">
+                    <h3 class="h3-format-text-1">Data Transação</h3>
+                </div>
+                <div class="left-context-50 left-context-25-e">
+                    <h1 class="h1-format-text-1">R$ 0,00</h3>
+                </div>
+                <div class="right-context-25 img-right-context-25-ne">
+                    <img src="../img/btn-excluir-transacao-cinza.png">
+                </div>                
+            </div>
+            <div class="item">
+                <div class="left-context-25 left-context-25-e">
+                    <h3 class="h3-format-text-1">Data Transação</h3>
+                </div>
+                <div class="left-context-50 left-context-25-e">
+                    <h1 class="h1-format-text-1">R$ 0,00</h3>
+                </div>
+                <div class="right-context-25 img-right-context-25-ne">
+                    <img src="../img/btn-excluir-transacao.png">
+                </div>                
+            </div>
+
+            <div class="item item-cyan">
+                <div class="left-context-25 left-context-25-e">
+                    <h3 class="h3-format-text-1">Data Transação</h3>
+                </div>
+                <div class="left-context-50 left-context-25-e">
+                    <h1 class="h1-format-text-1">R$ 0,00</h3>
+                </div>
+                <div class="right-context-25 img-right-context-25-ne">
+                    <img src="../img/btn-excluir-transacao-cinza.png">
+                </div>                
+            </div>
+
+
+ </main>       
+
+</body>
+
+</html>

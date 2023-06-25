@@ -1,0 +1,618 @@
+// Antes
+.seletor- {
+    &a {
+        float: left;
+    }
+    &a, &b {
+        color: red;
+    }
+ }
+ 
+ // Depois
+ .seletor-a {
+    float: left;
+ }
+ .seletor-a, .seletor-b, .seletor-c {
+    color: red;
+ } 
+
+
+ //// Declarações Customizadas
+   // Cores
+   $bk: #272822;
+   $r: #c03;
+   $g: #429032;
+   $b: #8cc53e;
+   $y: #49c5bf;
+   $bg: #f4f4f4;
+
+// Media Query Mixin - Desktop-first
+@mixin paraTelasPequenas($media) {
+   @media (max-width: $media) { @content; }
+}
+
+//Globais
+*,
+*:before,
+*:after {
+   box-sizing: border-box;
+}
+
+body {
+   font-family: "Segoe UI", Arial, "Helvetica Neue", Helvetica, sans-serif;
+   background-color: white;
+}
+
+h1, h2 {
+   color: white;
+}
+
+blockquote {
+   font-style: italic;
+   @include paraTelasPequenas(420) {
+      margin-left: 10px;
+   }
+}
+
+// Header
+.masthead {
+   display: flex;
+   justify-content: space-between;
+   max-width: 980px;
+   margin: auto;
+   padding: 10px;
+   background: $b;
+   @include paraTelasPequenas(700) {
+      display: block;
+      text-align: center;
+   }
+}
+
+.logo {
+   padding: 10px 0 10px 10px;
+   color: white;
+   line-height: 1.5;
+   font-size: 1.3em;
+   @include paraTelasPequenas(700) {
+      padding: 10px 0;
+      font-size: 1.5em;
+   }
+   @include paraTelasPequenas(420) {
+      font-size: 1.1em;
+   }
+}
+
+//Placeholder
+%highlight-section {
+   /*border: white 1px solid;
+   border-radius: 3px;
+   background: rgba(white, .1);*/
+   background: rgba(black,.2);
+   border-radius: 3px;
+}
+
+
+// Campo de busca
+.search {
+   @extend %highlight-section;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   color: white;
+   font-size: .9em;
+   padding: 10px;
+   .field {
+      width: 50%;
+      margin: 0 5px;
+      padding: 7px;
+      @include paraTelasPequenas(420) {
+         width: 70%;
+      }
+   }
+   button {
+      @include paraTelasPequenas(420) {
+         width: 90%;
+         margin-top: 10px;
+      }
+   }
+}
+
+// Formulários
+.field,
+.comments {
+   width: 100%;
+   margin-bottom: 10px;
+
+   @include paraTelasPequenas(420) {
+      width: 100%;
+   }
+}
+
+// Elementos de formulário
+input, textarea {
+   font-family: "Segoe UI", Arial, "Helvetica Neue", Helvetica, sans-serif;
+   padding: 10px;
+   border: none;
+   background: rgba(white,.8);
+   border-radius: 2px;
+   box-shadow: inset 0 1px 1px rgba(black,.5);
+}
+
+button {
+   border: none;
+   padding: 7px 10px;
+   background: #333;
+   border-radius: 3px;
+   color: white;
+   font-family: "Segoe UI", Arial, "Helvetica Neue", Helvetica, sans-serif;
+   cursor: pointer;
+}
+
+
+
+
+// Navegação
+.main-nav {
+    max-width: 980px;
+    margin: auto;
+    padding: 10px 5px;
+    border-bottom: rgba(black,.2) 1px solid;
+    background: #49c5bf;
+    @include paraTelasPequenas(420) {
+       padding: 5px 0;
+    }
+ }
+ 
+ // Todas as navegações
+ .nav-container {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    @include paraTelasPequenas(420) {
+       flex-wrap: wrap;
+    }
+    li {
+       display: flex;
+       width: 100%;
+       margin: 0 5px;
+       text-align: center;
+       @include paraTelasPequenas(420) {
+          display: flex;
+          justify-content: center;
+          flex-basis: 45%;
+          margin: 5px;
+       }
+    }
+    a {
+       @extend %highlight-section;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       width: 100%;
+       padding: 10px;
+       color: white;
+       text-decoration: none;
+       font-size: 1.3em;
+       box-shadow: inset 0 1px 2px rgba(black,.2);
+       border-bottom: rgba(white,.6) 1px solid;
+    }
+ }
+ 
+ // Container Principal
+ .main-container {
+    max-width: 980px;
+    margin: auto;
+    padding: 40px 40px 20px;
+    background: white;
+    color: rgba(white,.8);
+    border-bottom: $y 40px solid;
+    @include paraTelasPequenas(420) {
+       padding: 20px;
+       line-height: 1.5;
+    }
+    //Main Headings
+    &>h1 {
+       margin-top: 0;
+       padding-bottom: 10px;
+       border-bottom: $y 3px solid;
+       @include paraTelasPequenas(420) {
+          font-size: 1.6em;
+       }
+    }
+ }
+ 
+ // Article
+ .article-container {
+    margin-bottom: 20px;
+    padding: 10px;
+    background: rgba(white,.05);
+    border-radius: 2px;
+    border: rgba(black,.2) 10px solid;
+    box-shadow: 0 5px 15px rgba(black,.3);
+ }
+ 
+ // Conteúdo principal da página
+ .main-content {
+   width: 75%;
+   margin-right: 10px;
+   padding: 10px;
+   @include paraTelasPequenas(600) {
+         width: 100%;
+   }
+   h1 {
+         margin: 0;
+         padding-bottom: 10px;
+         border-bottom: $g 3px solid;
+   }
+ }
+
+
+ // Conteúdo lateral
+.side-content {
+    width: 25%;
+    padding: 10px;
+    font-size: .8em;
+    border: $b 2px dotted;
+    border-left: none;
+    border-right: none;
+    @include paraTelasPequenas(600) {
+          width: 100%;
+          margin-top: 12px;
+    }
+    h2 {
+          margin: 0;
+    }
+    ol {
+          padding-left: 20px;
+    }
+    a {
+          color: #eee;
+    }
+    p {
+          @include paraTelasPequenas(420) {
+               font-size: 1.2em;
+          }
+    }
+  }
+  
+  // Formulário de Contato
+  .contact-form {
+     width: 540px;
+     margin: 40px auto;
+     padding: 20px;
+     border: rgba(black,.2) 10px solid;
+     box-shadow: 0 5px 15px rgba(black,.3);
+     @include paraTelasPequenas(600) {
+        width: 100%;
+     }
+     h2 {
+        margin-top:0;
+        padding-bottom: 10px;
+        border-bottom: $r 3px solid;
+     }
+     label, button {
+        display: block;
+     }
+     input, textarea {
+        margin-top: 5px;
+     }
+     .comments {
+        height: 100px;
+     }
+     button {
+        font-size: 1.3em;
+        background: $b;
+        @include paraTelasPequenas(420) {
+           width: 100%;
+        }
+     }
+     .flex-container {
+        justify-content: space-between;
+        @include paraTelasPequenas(600) {
+           display: flex;
+        }
+        @include paraTelasPequenas(400) {
+           display: block;
+        }
+     }
+     .label-col {
+        width: 48%;
+        @include paraTelasPequenas(400) {
+           width: 100%;
+        }
+    }
+  }
+  
+  .label-col{
+    color: #6c6a6a;
+    width: 100% !important;
+    text-align: left;
+  }
+  
+  // Rodapé
+  .main-footer {
+     color: white;
+     padding: 10px;
+     border-top: $y 2px dotted;
+     font-size: .7em;
+     p {
+        margin-top: 0;
+        font-size: 1.2em;
+     }
+  }
+  
+  // Classes utilitárias
+  .flex-container {
+     display: flex;
+     @include paraTelasPequenas(600) {
+        display: block;
+     }
+  }
+
+  // others
+  .center-context{
+    position: relative;
+    float: left;
+    width :100%;
+    text-align: center;
+  }
+
+  .h1-format-text-1{
+    color: black;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    margin-bottom: 8px;
+  }
+
+  .h2-format-text-1{
+    color: black;
+    font-size: 1.875rem;
+    font-weight: 500;
+    line-height: 1.875rem;   
+  }
+
+  .h3-format-text-1{
+    color: black;
+    font-size: 1.375rem;
+    font-weight: 500;
+    line-height: 1.875rem;
+  }
+
+  .left-context{
+    position: relative;
+    float: left;
+    text-align: left;
+    width: 50%;
+  }
+  .right-context{
+    position: relative;
+    float: left;
+    text-align: right;
+    width: 50%;
+  }
+
+  
+ 
+.item { 
+    position: relative;
+    float: left;
+    width :100%;
+}
+.item-wide { flex-grow: 3; }
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+  }
+   
+  /* Coluna collapsed que quebrar para uma nova coluna */
+  .break-column {
+    flex-basis: 100%;
+    width: 0;
+  }
+
+  .items-in-4{
+    position: relative;
+    float:left;
+    width: 20%;
+  }
+
+  .three-em {
+    font-size: 3em;
+  }
+
+  .two-rem {
+    font-size:2rem;
+    font-weight: bold;
+  }
+
+  .two-rem-green {
+    color: #429032;
+  }
+
+  .label-col-green{
+   color: #429032;
+  
+  }
+
+  .label-col-red{
+   color: red;
+  
+  }
+
+  .two-rem-red {
+    color: red;
+  }
+
+  .right-context-100{
+    width: 100% !important;
+  }
+  .left-context-25{
+    width: 25% !important;
+  }
+
+  .left-context-24{
+    width: 24% !important;
+  }
+  
+  .left-context-75{
+    width: 75%;
+  }
+  .left-context-30{
+    position: relative;
+    float: left;
+    width: 35%;
+  }
+  .right-context-30{
+    position: relative;
+    float: right;
+    width: 17%;
+  }
+
+  .center-context-25{
+    position: relative;
+    float: left;
+    width :25%;
+    text-align: center;
+  }
+  .left-context-align-center{
+    text-align: center !important;
+  }
+
+  .right-context-25{
+    position: relative;
+    float :right;
+    width:17%;
+  }
+
+  .right-context-2e{
+    position: relative;
+    float :right;
+    width:26%;
+  }
+
+  .item-margin-top{
+    margin-top: 40px;
+    background-image: url("../../img/bg-01.png");
+    border-right: 20px solid #eee;
+  }
+
+  .item-blank-margin-top {
+    margin-top: 40px;   
+  }
+
+  .item-green-margin-top{
+    margin-top: 40px;
+    background-image: url("../../img/bg-02.png");
+  }
+
+  .item-dred-margin-top{
+    margin-top: 40px;
+    background-image: url("../../img/bg-03.png");
+  }
+
+  .item-border-20{
+     border: 20px solid #eee;
+  }
+
+  .item-cyan{
+    background-image: url("../../img/bg-04.png");
+  }
+
+  .item-green{
+    background-image: url("../../img/bg-01-item-green.png");
+  }
+
+  .left-context-25-e{
+    position: relative;
+    float: left;
+  }
+
+  .left-context-green-1-e{
+    margin-top: 10px;
+    position: relative;
+    float: left;
+    background-image: url("../../img/bg-02.png");
+    border: 2px solid #4290320a;
+    background-color: green;
+    height: 100px;
+  }
+
+  .left-context-dred-1-e{
+    margin-top: 10px;
+    position: relative;
+    float: left;
+    background-image: url("../../img/bg-03.png");
+    border: 2px solid #4290320a;
+    background-color: red;
+    height: 100px;
+  }
+
+  .right-context-25-e{
+    position: relative;
+    float: left;
+  }
+
+  .right-context-100-ne{
+    position: relative;
+    float: right;
+    width: 100%;
+    text-align: center
+  }
+
+  .img-right-context-25-ne{
+    position: relative;
+    float: right;
+    width: 24%;
+    text-align: right
+  }
+
+  
+  .left-context-50{
+    position: relative;
+    float: left;
+    width: 50%;
+  }
+
+  .center-context-margin-n{
+    margin-top: 20px !important;
+  }
+
+  .main-container{
+    padding: 0px 40px 20px !important;
+    border-bottom: white 40px solid;
+  }
+
+  .btn-formatted{
+   
+   width: 480px;
+   height: 90px;
+
+  }
+
+  .btn-ac-formatted{
+   width: 250px;
+   }
+
+   .btn-es-formatted{
+      width: 235px;
+   }
+
+
+   #form-home {
+      display: block !important;
+   } 
+   
+   #form-login, #form-cadastro, #form-saldo-atual, #form-receitas, #form-despesas {
+      display: none !important;
+   }
+
+   .form-50{
+      position: relative;
+      float: left;
+      text-align: center;
+      width: 50%;
+   }
